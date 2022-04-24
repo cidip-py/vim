@@ -14,10 +14,10 @@ syntax on
 set ignorecase
 set smartcase
 set nolist
-
 call plug#begin()
   "navigation
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 "status bar
   Plug 'maximbaz/lightline-ale'
   Plug 'itchyny/lightline.vim'
