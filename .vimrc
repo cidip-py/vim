@@ -13,6 +13,7 @@ set smartindent
 syntax on
 set ignorecase
 set smartcase
+set noswapfile
 set nolist
 call plug#begin()
   "navigation
@@ -53,3 +54,4 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+inoremap < <><left>
