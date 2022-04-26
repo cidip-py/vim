@@ -15,28 +15,34 @@ set ignorecase
 set smartcase
 set noswapfile
 set nolist
-call plug#begin()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
   "navigation
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
 "status bar
-  Plug 'maximbaz/lightline-ale'
-  Plug 'itchyny/lightline.vim'
+  Plugin 'maximbaz/lightline-ale'
+  Plugin 'itchyny/lightline.vim'
 "themes
-  Plug 'morhetz/gruvbox'
-  Plug 'mhartington/oceanic-next'
-  Plug 'severij/vadelma'
+  Plugin 'morhetz/gruvbox'
+  Plugin 'mhartington/oceanic-next'
+  Plugin 'severij/vadelma'
+  Plugin 'NLKNguyen/papercolor-theme'
 " typing
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-surround'
+Plugin 'alvan/vim-closetag'
+Plugin 'tpope/vim-surround'
 
 
 "IDE 
-Plug 'yggdroot/indentline'
+Plugin 'yggdroot/indentline'
+Plugin 'vim-airline/vim-airline-themes'
+"Autocomplete
+"Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
 
-call plug#end()
-
-colorscheme OceanicNext
+colorscheme vadelma
 
 "files shtct
 nnoremap <C-n> :NERDTree<CR>
@@ -46,6 +52,8 @@ nnoremap <C-n> :NERDTree<CR>
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
+"C compiler
+map <F8> :w <CR> :!gcc % -o %< && ./%< <CR>
 
 
 "autoclose brackets
@@ -55,3 +63,5 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap < <><left>
+
+
